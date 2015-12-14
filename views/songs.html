@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="page-header">
+    <h3>List of Songs from the REST API
+      <code>/api/v1/songs</code>
+    </h3>
+  </div>
+ 
+ 
+  <p class="lead">
+    <div class = "panel panel-info">
+   <div class = "panel-heading">
+      <h3 class = "panel-title">Songs Panel</h3>
+   </div>
+   <!--panel body -->
+     <div class = "panel-body">
+        <!-- Songs Table -->
+        <table id="songs_table" class="table">
+          <thead>
+            <tr>
+              <!-- Song Attributes -->
+              <th>Song</th>
+              <th>Band</th>
+              <th>Youtube</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in products">
+              <td>{{p.song}}</td>
+              <td>{{p.band}}</td>
+              <td><a href="{{p.youtube}}">Youtube</a></td>
+              <td><i ng-click="removeSong(p)" class="glyphicon glyphicon-remove"></i></td>
+            </tr>
+          </tbody>
+      </table>
+          <!-- Input New Song -->
+          <div class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputName2">Song</label>
+            <input ng-model="item.song" type="text" class="form-control" placeholder="Song Title">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Band</label>
+            <input ng-model="item.band" type="text" class="form-control" placeholder="Band Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Youtube</label>
+            <input ng-model="item.youtube" type="text" class="form-control" placeholder="youtube link">
+          </div>
+          <button ng-click="addNewSong()" type="submit" class="btn btn-default">Populate</button>
+        </div>
+    </div>
+  </p>
+ 
+</div>
