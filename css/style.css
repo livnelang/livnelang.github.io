@@ -47,3 +47,41 @@ code {
   color:red;
   cursor:pointer;
 }
+
+/*
+* Top-Bar template
+*/
+.nav {
+  float:left;
+}
+.navbar {
+  margin-bottom: 0px !important;
+}
+.nav li {
+  display: inline-block;
+}
+.nav>li>a {
+  padding: 10px 10px;
+}
+.navbar-nav {
+  margin-left:20px;
+}
+.navbar-header a {
+  padding-right: 5px;
+}
+.form-group {
+  margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+.tapped_back{
+  background-color: beige !important;
+}
+.map_container {
+  height:100%;
+}
+.map_container>.scroll{
+  height:100%
+}
+.ng-scope{
+  height: inherit;
+}

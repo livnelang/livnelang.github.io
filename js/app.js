@@ -4,7 +4,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
  
   $httpProvider.interceptors.push('TokenInterceptor');
 
-  $urlRouterProvider.otherwise("login");
+  $urlRouterProvider.otherwise("songs");
  
   $stateProvider
     .state('login', {
@@ -37,7 +37,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
       templateUrl: 'views/songs.html',
       controller: 'songsController',
       access: {
-        requiredLogin: true
+        requiredLogin: false
       }
     });
 });

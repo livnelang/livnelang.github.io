@@ -2,6 +2,7 @@
 <html >
 <head>
   <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ngClient</title>
 
   <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -15,6 +16,8 @@
   <script src="./js/factories/data.factory.js"></script>
   <script src="./js/controllers.js"></script>
   <script src="./js/controllers/songs.controller.js"></script>
+  <script src="./js/directives.js"></script>
+
  
   <script type="text/javascript" src="/js/auth/auth.factory.js"></script>
   <script type="text/javascript" src="/js/auth/auth.controller.js"></script>
@@ -23,7 +26,8 @@
  
 <body ng-app="ngclient">
 
-
+    <!-- Top Navbar -->
+    <top-bar> </top-bar>
     <div ui-view>
 
     </div>

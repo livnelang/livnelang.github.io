@@ -1,6 +1,6 @@
 myApp.factory('AuthenticationFactory', function($window) {
   var auth = {
-    isLogged: false,
+    isLogged: true,
     check: function() {
       if ($window.sessionStorage.token && $window.sessionStorage.user) {
         this.isLogged = true;
