@@ -4,7 +4,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
  
   $httpProvider.interceptors.push('TokenInterceptor');
 
-  $urlRouterProvider.otherwise("songs");
+  $urlRouterProvider.otherwise("login");
  
   $stateProvider
     .state('login', {
