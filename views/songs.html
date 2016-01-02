@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="p in products">
+            <tr ng-repeat="p in products" ng-click="vibrate($event, song)">
               <td>{{p.song}}</td>
               <td>{{p.band}}</td>
               <td><a href="{{p.youtube}}">Youtube</a></td>

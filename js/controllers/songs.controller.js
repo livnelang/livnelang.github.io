@@ -1,5 +1,6 @@
-angular.module('ngclient').controller('songsController',['$scope', 'dataFactory','$http','$state', function($scope, dataFactory, $http, $state) {
+angular.module('ngclient').controller('songsController',['$scope', 'dataFactory','$http','$state','vibrator', function($scope, dataFactory, $http, $state, vibrator) {
     $scope.products = [];
+    $scope.choice = {};
 
     //$scope.
     //console.log('First taste of songs controller');
@@ -52,6 +53,23 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
         }
 
     }
+
+    /*
+   * On Location Tap Vibrate
+   */
+   $scope.vibrate = function($event, song) {
+     vibrator.vibrate(200);
+     /* If We Already Selected One */
+     if($scope.choice.element) {
+        $($scope.choice.element).removeClass("tapped_back");
+     }
+     /* Replace With the second One */
+     $scope.choice.song = song;
+     $scope.choice.element = $($event.target).parent();
+     $($scope.choice.element).addClass("tapped_back");
+     // Send to factory selected location
+     //localstorage.setLocation($scope.choice.location);
+   };
 
 
  

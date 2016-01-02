@@ -85,3 +85,10 @@ code {
 .ng-scope{
   height: inherit;
 }
+
+/*
+* Songs Page
+*/
+.tapped_back{
+  background-color: beige !important;
+}

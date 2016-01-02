@@ -1,4 +1,4 @@
-var myApp = angular.module('ngclient', ['ui.router']);
+var myApp = angular.module('ngclient', ['ui.router','angular-vibrator']);
  
 myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
  
