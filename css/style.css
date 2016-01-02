@@ -92,3 +92,6 @@ code {
 .tapped_back{
   background-color: beige !important;
 }
+.table tbody tr td {
+  max-width: 120px !important;
+}
