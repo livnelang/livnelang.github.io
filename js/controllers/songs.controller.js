@@ -20,23 +20,6 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
     }
 
     /*
-    * Function to remove a song from the list
-    */
-    $scope.removeSong = function(selected) {
-        console.log('inside remove song: ' + selected);
-        $http.delete("https://band-songs.herokuapp.com/api/v1/song/" + selected._id).then(function(response) {
-            console.log(response.data.item_deleted);
-            if(response.data.item_deleted =="success") {
-                console.log('harray');
-                var index = $scope.products.indexOf(selected);
-                $scope.products.splice(index, 1);    
-            }
-        });
-
-
-    }
-
-    /*
     * Function to add a new song to the list
     */
     $scope.addNewSong = function() {
@@ -65,6 +48,7 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
      }
      /* Replace With the second One */
      $scope.choice.song = song;
+     dataFactory.choice = $scope.choice.song; // Set the selected song for the factory
      $scope.choice.element = $($event.target).parent();
      $($scope.choice.element).addClass("tapped_back");
      // Send to factory selected location
