@@ -1,6 +1,4 @@
-
-  <p class="lead">
-    <div class = "panel panel-info">
+<div class = "panel panel-info">
    <div class = "panel-heading">
       <h3 class = "panel-title">Songs Panel</h3>
    </div>
@@ -14,19 +12,16 @@
               <th>Song</th>
               <th>Band</th>
               <th>Youtube</th>
-              <th>Delete</th>
+              <th>Chords</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="p in products" ng-click="vibrate($event, song)">
+            <tr ng-repeat="p in products" ng-click="vibrate($event, p)">
               <td>{{p.song}}</td>
               <td>{{p.band}}</td>
-              <td><a href="{{p.youtube}}">Youtube</a></td>
-              <td><i ng-click="removeSong(p)" class="glyphicon glyphicon-remove"></i></td>
+              <td><a ui-sref="youtube({video: p.youtube})">Youtube</a></td>
+              <td><a href="{{p.chords}}"><i class="glyphicon glyphicon-music"></i></a></td>
             </tr>
           </tbody>
       </table>
-        
-  </p>
- 
 </div>

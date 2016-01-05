@@ -1,4 +1,4 @@
-var myApp = angular.module('ngclient', ['ui.router','angular-vibrator']);
+var myApp = angular.module('ngclient', ['ui.router','angular-vibrator','ngDialog']);
  
 myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
  
@@ -36,6 +36,14 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
       url: '/songs',
       templateUrl: 'views/songs.html',
       controller: 'songsController',
+      access: {
+        requiredLogin: false
+      }
+    })
+    .state('youtube', {
+      url: '/youtube?video',
+      templateUrl: 'views/youtube-frame.html',
+      controller: 'youtubeController',
       access: {
         requiredLogin: false
       }

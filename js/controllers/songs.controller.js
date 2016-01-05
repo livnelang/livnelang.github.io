@@ -5,19 +5,21 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
     //$scope.
     //console.log('First taste of songs controller');
     // Access the factory and get the latest products list
-    $http.get("https://band-songs.herokuapp.com/api/v1/songs").success(function(data, status) {
-      $scope.products = data;
+    $http.get("http://localhost:3000/api/v1/songs").then(function(response) {
+      $scope.products = [];
+      $scope.products = response.data;
+      console.log('current xhr songs: ' + response.data.length);
       console.log('current songs: ' + $scope.products.length);
     });
 
-    $scope.refreshSongs = function() {
+    /*$scope.refreshSongs = function() {
         $http.get("https://band-songs.herokuapp.com/api/v1/songs").then(function(response) {
             console.log('inside refresh');
         $scope.products = [];
         $scope.products = response.data;
         console.log('current songs: ' + $scope.products.length);
         });
-    }
+    } */
 
     /*
     * Function to add a new song to the list
@@ -55,8 +57,5 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
      //localstorage.setLocation($scope.choice.location);
    };
 
-
- 
-  
 
 }]);

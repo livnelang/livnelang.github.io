@@ -1,6 +1,4 @@
-myApp.factory('dataFactory', function($http) {
-  /** https://docs.angularjs.org/guide/providers **/
-  var urlBase = 'http://localhost:3000/api/v1/songs';
+myApp.factory('dataFactory', function($http, $q) {
   var _prodFactory = {};
  
   _prodFactory.getProducts = function() {
@@ -20,15 +18,19 @@ myApp.factory('dataFactory', function($http) {
     * Function to remove a song from the list
     */
     _prodFactory.removeSong = function() {
+        var deferred = $q.defer();
+
         console.log('inside dataFactory remove song: ' + _prodFactory.choice);
-        /*$http.delete("https://band-songs.herokuapp.com/api/v1/song/" + selected._id).then(function(response) {
+        deferred.resolve($http.delete("http://localhost:3000/api/v1/song/" + _prodFactory.choice._id).then(function(response) {
             console.log(response.data.item_deleted);
             if(response.data.item_deleted =="success") {
                 console.log('harray');
-                var index = $scope.products.indexOf(selected);
-                $scope.products.splice(index, 1);    
+                /*var index = $scope.products.indexOf(selected);
+                $scope.products.splice(index, 1);   */ 
             }
-        }); */
+        }));
+
+        return deferred.promise;
 
 
     }
