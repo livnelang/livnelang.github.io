@@ -6,7 +6,7 @@ angular.module('ngclient').controller('createController',['$scope','$http','$sta
     $scope.addNewSong = function() {
     	console.log('inside new song client');
     	console.log($scope.item);
-    	$http.post("http://localhost:3000/api/v1/song", $scope.item).success(function(data, status) {
+    	$http.post("https://band-songs.herokuapp.com/api/v1/song", $scope.item).success(function(data, status) {
             console.log('song was saved');
             if(data!= null) {
                 $state.go('songs', {}, { reload: true });

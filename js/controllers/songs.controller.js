@@ -5,7 +5,7 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
     //$scope.
     //console.log('First taste of songs controller');
     // Access the factory and get the latest products list
-    $http.get("http://localhost:3000/api/v1/songs").then(function(response) {
+    $http.get("https://band-songs.herokuapp.com/api/v1/songs").then(function(response) {
       $scope.products = [];
       $scope.products = response.data;
     });

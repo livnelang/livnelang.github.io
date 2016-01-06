@@ -21,7 +21,7 @@ myApp.factory('dataFactory', function($http, $q) {
         var deferred = $q.defer();
 
         console.log('inside dataFactory remove song: ' + _prodFactory.choice);
-        deferred.resolve($http.delete("http://localhost:3000/api/v1/song/" + _prodFactory.choice._id).then(function(response) {
+        deferred.resolve($http.delete("https://band-songs.herokuapp.com/api/v1/song/" + _prodFactory.choice._id).then(function(response) {
             console.log(response.data.item_deleted);
             if(response.data.item_deleted =="success") {
                 console.log('harray');
