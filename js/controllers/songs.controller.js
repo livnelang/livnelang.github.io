@@ -8,8 +8,6 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
     $http.get("http://localhost:3000/api/v1/songs").then(function(response) {
       $scope.products = [];
       $scope.products = response.data;
-      console.log('current xhr songs: ' + response.data.length);
-      console.log('current songs: ' + $scope.products.length);
     });
 
     /*$scope.refreshSongs = function() {
@@ -25,8 +23,6 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
     * Function to add a new song to the list
     */
     $scope.addNewSong = function() {
-    	console.log('inside new song client');
-    	console.log($scope.item);
     	$http.post("https://band-songs.herokuapp.com/api/v1/song", $scope.item).success(function(data, status) {
             console.log('song was saved');
             if(data!= null) {
@@ -56,6 +52,14 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
      // Send to factory selected location
      //localstorage.setLocation($scope.choice.location);
    };
+
+   /*
+   * Relates to youtube page, with factory parameter
+   */
+   $scope.youtubeRelate = function(link) {
+        dataFactory.youtube = link;
+        $state.go('youtube');
+   }
 
 
 }]);

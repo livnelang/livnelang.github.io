@@ -41,7 +41,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
       }
     })
     .state('youtube', {
-      url: '/youtube?video',
+      url: '/youtube',
       templateUrl: 'views/youtube-frame.html',
       controller: 'youtubeController',
       access: {

@@ -19,7 +19,7 @@
             <tr ng-repeat="p in products" ng-click="vibrate($event, p)">
               <td>{{p.song}}</td>
               <td>{{p.band}}</td>
-              <td><a ui-sref="youtube({video: p.youtube})">Youtube</a></td>
+              <td><a ng-click="youtubeRelate(p.youtube)">Youtube</a></td>
               <td><a href="{{p.chords}}"><i class="glyphicon glyphicon-music"></i></a></td>
             </tr>
           </tbody>
