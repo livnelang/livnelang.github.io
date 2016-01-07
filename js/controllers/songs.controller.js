@@ -1,6 +1,8 @@
 angular.module('ngclient').controller('songsController',['$scope', 'dataFactory','$http','$state','vibrator', function($scope, dataFactory, $http, $state, vibrator) {
     $scope.products = [];
     $scope.choice = {};
+    // Reset factory.choice 
+    dataFactory.choice = null;
 
     //$scope.
     //console.log('First taste of songs controller');
@@ -59,6 +61,14 @@ angular.module('ngclient').controller('songsController',['$scope', 'dataFactory'
    $scope.youtubeRelate = function(link) {
         dataFactory.youtube = link;
         $state.go('youtube');
+   }
+
+   /*
+   * Relates to chords page, with factory parameter
+   */
+   $scope.chordsRelate = function(link) {
+        dataFactory.chords = link;
+        $state.go('chords');
    }
 
 

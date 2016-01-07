@@ -25,6 +25,7 @@ myApp.factory('dataFactory', function($http, $q) {
             console.log(response.data.item_deleted);
             if(response.data.item_deleted =="success") {
                 console.log('harray');
+                _prodFactory.choice = null; // reset song to null value
                 /*var index = $scope.products.indexOf(selected);
                 $scope.products.splice(index, 1);   */ 
             }

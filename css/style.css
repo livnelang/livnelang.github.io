@@ -3,6 +3,7 @@
 
 html {
   position: relative;   
+  height:100%;
   
 }
 body {
@@ -121,4 +122,12 @@ td i {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/*
+*chords-frame.html
+*/
+.chords-iframe {
+  height: inherit;
+  width: 100%;
 }

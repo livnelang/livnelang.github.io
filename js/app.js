@@ -48,6 +48,14 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider)  {
         requiredLogin: false
       }
     })
+    .state('chords', {
+      url: '/chords',
+      templateUrl: 'views/chords-frame.html',
+      controller: 'chordsController',
+      access: {
+        requiredLogin: false
+      }
+    })
     .state('create', {
       url: '/create',
       templateUrl: 'views/create-song.html',

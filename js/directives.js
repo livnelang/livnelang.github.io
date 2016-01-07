@@ -29,7 +29,13 @@ myApp.directive('topBar',['dataFactory','$location','$state','ngDialog', functio
                                 }, function (error) {
                                 });
                     }
-                    return;
+                    else {
+                        ngDialog.open({
+                            template: '<h2>Song Remove</h2><p>Please select a song and try again</p>',
+                            plain: true
+                        });
+                        return;
+                    }                    
                 }
 
         }
